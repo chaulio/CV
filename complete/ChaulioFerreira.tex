@@ -54,12 +54,12 @@
 %-----------------------------------------------------------
 %Custom commands
 \newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
-\newcommand{\resheading}[1]{\vspace{8pt}
+\newcommand{\resheading}[1]{\vspace{2pt} %ORIGINALLY 8pt
   \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
     \begin{shaded}
 \setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
     \end{shaded}
-  }\vspace{-5pt}
+  }\vspace{-11pt} %ORIGINALLY -5pt
 }
 \newcommand{\ressubheading}[4]{
 \begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
@@ -74,17 +74,15 @@
 \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
 \textbf{\Large Chaulio Ferreira} & \textbf{\today} \\
 PhD candidate at the Technical University of Munich & chauliof@gmail.com \\
-%http://github.com/chaulio/CV & chaulio.ferreira@tum.de \\
+http://github.com/chaulio/CV & chaulio.ferreira@tum.de \\
+
+
 \end{tabular*}
 \\
-
-\vspace{-10pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \resheading{About}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\vspace{-10pt}
 
 \justify
 ~~~~~~PhD candidate at the Chair for Scientific Computing of the Technical University of
@@ -100,74 +98,80 @@ He has expertise mostly in the following areas: Design and Analysis of Algorithm
 
 	\ressubheading{Technical University of Munich}{Munich, Germany}{PhD candidate at the chair for Scientific Computing}{Oct 2015 -- ongoing}
 
-	\begin{itemize}
-
-		\resitem{Title: \emph{Vectorization of Riemann solvers for the single- and multi-layer shallow water equations}}
-
-		\resitem{Supervisor: Michael Bader}
-		
-		%\resitem{Grants from: CPNq (Brazil)}
-
-	\end{itemize}
+	\ifdef{\completeversion} {
+	  \begin{itemize}
+	    \resitem{Title: \emph{Vectorization of Riemann solvers for the single- and multi-layer shallow water equations}}
+	    \resitem{Supervisor: Michael Bader}
+	    \resitem{Grants from: CPNq (Brazil)}
+	  \end{itemize}
+	}
 	
 \item
 
 	\ressubheading{Columbia University}{New York, USA}{Visiting scholar}{Sep 2017 -- Nov 2017}
+	
+	\ifdef{\completeversion} {
+	  \begin{itemize}
+	    \resitem{Guest at the Department of Applied Physics and Applied Mathematics}
+	    \resitem{Supervisor: Kyle T. Mandli}
+	    \resitem{Grants from: TUM Graduate School (Germany)}
+	  \end{itemize}
+	}
 
-	\begin{itemize}
-
-		\resitem{Guest at the Department of Applied Physics and Applied Mathematics}
-
-		\resitem{Supervisor: Kyle T. Mandli}
-		
-		%\resitem{Grants from: TUM Graduate School (Germany)}
-
-	\end{itemize}
 
 \item	\ressubheading{Federal University of Viçosa}{Viçosa, Brazil}{Master's degree in Computer Science}{Mar 2012 - Feb 2014}
 
-	\begin{itemize}
 
-		\resitem{Title: \emph{Visibility maps in large terrains represented by regular grids}}
-
-		\resitem{Supervisor: Marcus Vinicius Alvim Andrade}
-		
-		\resitem{Co-supervisor: Salles Viana Gomes de Magalhães}
-		
-		%\resitem{Grants from: CAPES (Brazil)}
-
-	\end{itemize}
+	\ifdef{\completeversion} {
+	  \begin{itemize}
+	    \resitem{Title: \emph{Visibility maps in large terrains represented by regular grids}}
+	    \resitem{Supervisor: Marcus Vinicius Alvim Andrade}
+	    \resitem{Co-supervisor: Salles Viana Gomes de Magalhães}
+	    \resitem{Grants from: CAPES (Brazil)}
+	  \end{itemize}
+	 }
 	
 \item	\ressubheading{Federal University of Viçosa}{Viçosa, Brazil}{Bachelor's degree in Computer Science}{Mar 2008 - Jan 2012}
 
-	\begin{itemize}
-
-		\resitem{Final project: \emph{An interactive system to site observers in terrains represented by digital elevation models}}
-
-		\resitem{Supervisor: Marcus Vinicius Alvim Andrade}
-
-	\end{itemize}
+	\ifdef{\completeversion} {
+	  \begin{itemize}
+	    \resitem{Final project: \emph{An interactive system to site observers in terrains represented by digital elevation models}}
+	    \resitem{Supervisor: Marcus Vinicius Alvim Andrade}
+	  \end{itemize}
+	 }
 
 \end{itemize}
 
-%\newpage
+
+
+\ifdef{\completeversion} {
+  \newpage
+}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \resheading{Professional Activities}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{itemize}
 
 \item
-	\ressubheading{Federal University of Viçosa}{Viçosa, Brazil}{Lecturer}{Apr 2014 -- Jul 2015}
+	\ressubheading{Federal University of Viçosa}{Viçosa, Brazil}{Lecturer at the Department of Informatics}{Apr 2014 -- Jul 2015}
 	\begin{itemize}
-	  \resitem{Courses:}
-	  \begin{itemize}
-	    \item (INF 100) Introduction to programming I
-	    \item (INF 101) Introduction to programming II
-	    \item (INF 110) Programming I
-	    \item (INF 213) Data structures
-	    \item (INF 390) Computer graphics
-	    \item (INF 492) Programming challenges
-	  \end{itemize}
+	  \ifdef{\completeversion}{
+	    \resitem{Courses:}
+	    \begin{itemize}
+	      \item (INF 100) Introduction to programming I
+	      \item (INF 101) Introduction to programming II
+	      \item (INF 110) Programming I
+	      \item (INF 213) Data structures
+	      \item (INF 390) Computer graphics
+	      \item (INF 492) Programming challenges
+	    \end{itemize}
+	  }
+	  { %else (short version)
+	    \item Courses: Data structures, Computer Graphics and various Programming courses.
+	  }
 	\end{itemize}
 \end{itemize}
 
@@ -181,53 +185,82 @@ He has expertise mostly in the following areas: Design and Analysis of Algorithm
   \item \textbf{Other:} Git, OpenGL, Linux, Windows, \LaTeX.
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Awards}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{itemize}
-  \item Best paper award at the XIV Brazilian Symposium on Geonfirmatics -- ``A parallel sweep line algorithm for visibility computation'' (Brazilian Institute of Spatial Research, 2013).
-  \item Honor certificate for Excellent Academic Performance (Federal University of Viçosa, Brazil, 2012).
-  \item Silver Medal at the 1st Programming Marathon of the State of Minas Gerais, Brazil (Brazilian Computing Society, 2012)
-  \item Fourth place at the 7th Marathon of Parallel Programming (Technical Committee on Computer Architecture and High Performance Computing -- Brazilian Computing Society, 2012).
-  \item First place at the regional stage of the International Collegiate Programming Contest (Juiz de Fora, Brazil, Association for Computing Machinery, 2012).
-  \item 28th place at the national stage of the International Collegiate Programming Contest (Londrina, Brazil, Association for Computing Machinery, 2012).
-  \item Second place at the 6th Marathon of Parallel Programming (Technical Committee on Computer Architecture and High Performance Computing -- Brazilian Computing Society, 2011).
-  \item First place at the 2nd GPU Programming Contest (Technical Committee on Computer Architecture and High Performance Computing -- Brazilian Computing Society, 2011).
-  \item First place at the regional stage of the International Collegiate Programming Contest (Juiz de Fora, Brazil, Association for Computing Machinery, 2010).
-  \item 25th place at the national stage of the International Collegiate Programming Contest (Joinville, Brazil, Association for Computing Machinery, 20120.
-\end{itemize}
+\ifdef{\completeversion}
+{
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \resheading{Awards}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Publications}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\nobibliography{publications}
-\bibliographystyle{IEEEtran}
+  \begin{itemize}
+    \item Best paper award at the XIV Brazilian Symposium on Geonfirmatics -- ``A parallel sweep line algorithm for visibility computation'' (Brazilian Institute of Spatial Research, 2013).
+    \item Honor certificate for Excellent Academic Performance (Federal University of Viçosa, Brazil, 2012).
+    \item Silver Medal at the 1st Programming Marathon of the State of Minas Gerais, Brazil (Brazilian Computing Society, 2012)
+    \item Fourth place at the 7th Marathon of Parallel Programming (Technical Committee on Computer Architecture and High Performance Computing -- Brazilian Computing Society, 2012).
+    \item First place at the regional stage of the International Collegiate Programming Contest (Juiz de Fora, Brazil, Association for Computing Machinery, 2012).
+    \item 28th place at the national stage of the International Collegiate Programming Contest (Londrina, Brazil, Association for Computing Machinery, 2012).
+    \item Second place at the 6th Marathon of Parallel Programming (Technical Committee on Computer Architecture and High Performance Computing -- Brazilian Computing Society, 2011).
+    \item First place at the 2nd GPU Programming Contest (Technical Committee on Computer Architecture and High Performance Computing -- Brazilian Computing Society, 2011).
+    \item First place at the regional stage of the International Collegiate Programming Contest (Juiz de Fora, Brazil, Association for Computing Machinery, 2010).
+    \item 25th place at the national stage of the International Collegiate Programming Contest (Joinville, Brazil, Association for Computing Machinery, 20120.
+  \end{itemize}
 
-\begin{itemize}
-  \item \textbf{Journal papers:}
+  %\newpage
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \resheading{Publications}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \nobibliography{publications}
+  \bibliographystyle{IEEEtran}
+
+  %\begin{itemize}
+  ~~~  \textbf{Journal papers:}
+    \begin{enumerate}
+    \item \bibentry{ferreira2016efficient}
+    \item \bibentry{ferreira2014parallel}
+    \end{enumerate}
+
+  ~~~  \textbf{Conference papers:}
+
+    \begin{enumerate}
+    \item \bibentry{ferreira2017load}
+    \item \bibentry{pena2014efficient}
+    \item \bibentry{pena2014improved}
+    \item \bibentry{ferreira2013parallel}
+    \item \bibentry{pena2013algoritmo}
+    \item \bibentry{ferreira2012more}
+    \item \bibentry{jacob2012gpu}
+    \item \bibentry{ferreira2012abordagem}
+    \item \bibentry{ferreira2011sistema}
+    \item \bibentry{de2010heuristics}
+    \end{enumerate}
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \resheading{Scientific talks}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
   \begin{enumerate}
-   \item \bibentry{ferreira2016efficient}
-   \item \bibentry{ferreira2014parallel}
+    \item ``Load balancing and patch-based parallel adaptive mesh refinement for Tsunami simulation on heterogeneous platforms using Xeon Phi coprocessors'', at \emph{Platform for Advanced Scientific Computing} (PASC), in Lugano, Switzerland, 2017.
+    \item ``Performance and Time to Solution of Dynamically Adaptive Tsunami Simulations'', at \emph{SIAM Conference on Computational Science and Engineering} (SIAM CSE), in Atlanta, USA, 2017.
+    \item ``Dynamically adaptive tsunami simulations on Xeon Phi architectures'', at \emph{Congress of the Italian Society of Industrial and Applied Mathematics} (SIMAI), in Milan, Italy, 2016.
+    \item ``GPU optimization techniques applied to Scale Free Gene Regulatory Networks based on Threshold Function'', at \emph{13th Symposium
+  on Computer Systems} ((WSCAD-SSC), in Petropolis, Brazil, 2012.
   \end{enumerate}
- 
-  \item \textbf{Conference papers:}
-  \begin{enumerate}
-   \item \bibentry{ferreira2017load}
-   \item \bibentry{pena2014efficient}
-   \item \bibentry{pena2014improved}
-   \item \bibentry{ferreira2013parallel}
-   \item \bibentry{pena2013algoritmo}
-   \item \bibentry{ferreira2012more}
-   \item \bibentry{jacob2012gpu}
-   \item \bibentry{ferreira2012abordagem}
-   \item \bibentry{ferreira2011sistema}
-   \item \bibentry{de2010heuristics}
-  \end{enumerate}
-\end{itemize}
+}
+{ % else (short version)
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \resheading{Awards and academic production}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+  \begin{itemize}
+   \item 10 awards, including best conference paper, honor certificate for academic performance and various programming competitions.
+   \item 2 papers published in peer-reviewed journals as first author.
+   \item 10 papers published in conferences, 5 of them as first author.
+   \item 4 scientific talks in international conferences in the US, Switzerland, Italy and Brazil.
+   \item Complete lists are available in the complete version of this CV, at [link].
+  \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\resheading{Scientific talks}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+}
 
 \end{document}
